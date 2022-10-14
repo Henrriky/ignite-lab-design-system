@@ -61,3 +61,8 @@ para a documentação dos componentes
 ***Instalando o serviço de integração contínua***
     - Vamos criar uma pasta com a seguinte estrutura .github/workflows/deploy-docs.yml
       - Dentro desse arquivo vamos utilizar a sintaxe do próprio github actions
+    - Teste:
+      - ```git status```
+      - ```git add .```
+      - ```git commit -m "ci: Add publish storybook workflow"```
+      - ```git push origin main```
