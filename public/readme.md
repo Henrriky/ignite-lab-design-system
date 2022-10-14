@@ -66,3 +66,21 @@ para a documentação dos componentes
       - ```git add .```
       - ```git commit -m "ci: Add publish storybook workflow"```
       - ```git push origin main```
+
+***Prática: Addon de assessibilidade***
+  - Adicionar um addon de assessibilidade no storybook
+    - ```npm install @storybook/addon-a11y```
+    - Agora o storybook vai retornar para todos os documentos uma aba de acessibilidade
+
+***Prática: Criar uma interface com a nossa documentação***
+  - [transform.tools] -> Envia svg e retorna um componente react
+
+## AULA 04
+
+
+
+
+
+
+
+
