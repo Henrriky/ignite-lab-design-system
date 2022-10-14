@@ -50,4 +50,14 @@ para a documentação dos componentes
       - Vamos utilizar a CLI do GIthub, que permite a gente mexer no github através do terminal
       - ```gh auth login```
       - ```gh repo create```
-      - ```git add```
+      - ```git add .```
+      - ```git commit -m "Initial commit"```
+      - ```git remote add origin https://github.com/Henrriky/ignite-lab-design-system.git```
+      - ```  git branch -M main```
+      - ``` git push -u origin main```
+    - Queremos que toda vez que eu envie uma nova versão do código no Github, ele publique o meu storybook dentro do GitPages
+      - Para isso, vamos instalar um serviço de integração contínua (nada mais são do que uma forma da gente conseguir disparar ações a cada vez que a gente tem uma nova mudança no nosso código)
+        - Além disso, vamos fazer a entrega contínua que é fazer o deploy(colocar no ar) a nossa aplicação (documentação) quando fizermos um código novo
+***Instalando o serviço de integração contínua***
+    - Vamos criar uma pasta com a seguinte estrutura .github/workflows/deploy-docs.yml
+      - Dentro desse arquivo vamos utilizar a sintaxe do próprio github actions
