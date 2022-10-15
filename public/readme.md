@@ -77,6 +77,52 @@ para a documentação dos componentes
 
 ## AULA 04
 
+- Criar um compontente "sign in" separado em uma pasta pages
+  - Criar o storybook desse componente
+  - Simulando login 
+    ```Javascript
+    const [isUserSignIn, setIsUserSignIn] = useState(false);
+
+    function handleSignIn(event: FormEvent) {
+      event.preventDefault();
+      setIsUserSignIn(true)
+    }
+    ```
+***Plugin de interações do storybook***
+- Instalar biblioteca ```npm install @storybook/addon-interactions @storybook/jest @storybook/testing-library @storybook/test-runner -D```
+  - Com isso agora podemos realizar testes com nossos componentes através da função play, onde podemos manipular nossa página através de DOM's
+  - Através da aba interactions conseguimos manipular a linha do tempo dos testes realizados
+  - Somos capazes de realizar variados tipos de testes
+- "test-storybook": "test-storybook"
+  - Conseguimos agora através do terminal verificar os testes
+    - ```npm run test-storybook```
+    - ```npm run test-storybook -- --watch```
+***Testando chamada de API no Formulário de login***
+- npm i axios (chamada HTTP)
+  - Como não vale a pena criar um back-end para fazer uma chamada vamos utilizar o Moc
+    - O Mock é a melhor maneira para nós fazermos com que um serviço não tenha dependencias externas enquanto a gente está desenvolvendo
+    - O melhor mock atualmente é o [msw] -> [https://mswjs.io]
+      - É o melhor pois ele não intercepta as requisições HTTP (do front para o back) e não permite que elas aconteçam
+      - Ou seja, ele cria uma API local funcionando dentro dos services workers do nosso Browser
+        - O service work é o local do browser onde podemos executar node, javascript sem restrições no nosso navegador
+      - Resumindo, ele cria uma API dentro do nosso browser, fazendo com que nós não precisemos rodar um back-end na máquina ou terminal
+      - E ainda por cima essa ferramenta tem integração com o StoryBook
+-> Instalando o MSW
+  - ```npm i msw msw-storybook-addon -D```
+  - ```npx msw init public/```
+  - Passar para o main.cjs o "staticDirs": ["../public"]
+  - Jogar esser código no preview
+     ```javascript
+    import { initialize, mswDecorator } from 'msw-storybook-addon';
+
+    // Initialize MSW
+    initialize();
+
+    // Provide the MSW addon decorator globally
+    export const decorators = [mswDecorator];
+     ```
+  -
+
 
 
 

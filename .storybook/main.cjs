@@ -6,7 +6,7 @@ module.exports = {
   "addons": [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
-    "@storybook/addon-interactions",
+    '@storybook/addon-interactions',
     '@storybook/addon-a11y',
   ],
   "framework": "@storybook/react",
@@ -14,8 +14,13 @@ module.exports = {
     "builder": "@storybook/builder-vite"
   },
   "features": {
-    "storyStoreV7": true
+    "storyStoreV7": true,
+    'interactionsDebugger': true,
   },
+  "staticDirs": [
+    "../public"
+  ],
+
   viteFinal: (config, {configType}) => {
     if (configType === 'PRODUCTION') {
       config.base = '/ignite-lab-design-system/'
